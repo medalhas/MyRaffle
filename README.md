@@ -10,6 +10,9 @@ A raffle application built with React, TypeScript, and Tailwind CSS. Features an
 - 📱 **Responsive Design**: Works perfectly on desktop and mobile devices
 - 🔄 **Easy Reset**: Quick reset functionality to run multiple raffles
 - 📅 **Timestamp**: ISO formatted timestamps for each raffle result
+- 🏗️ **Clean Architecture**: Modular component structure with separation of concerns
+- 🔒 **Type Safety**: Full TypeScript support with proper interfaces and type definitions
+- ♻️ **Reusable Components**: Well-structured components that can be easily extended
 
 ## 🚀 Getting Started
 
@@ -22,18 +25,18 @@ A raffle application built with React, TypeScript, and Tailwind CSS. Features an
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repository-url>
+   git clone git@github.com:medalhas/MyRaffle.git
    cd MyRaffle
    ```
 
 2. **Install dependencies**
    ```bash
-   npm install
+   yarn
    ```
 
 3. **Start the development server**
    ```bash
-   npm run dev
+   yarn dev
    ```
 
 4. **Open your browser**
@@ -41,10 +44,10 @@ A raffle application built with React, TypeScript, and Tailwind CSS. Features an
 
 ## 🛠️ Available Scripts
 
-- `npm run dev` - Start the development server
-- `npm run build` - Build the project for production
-- `npm run preview` - Preview the production build locally
-- `npm run lint` - Run ESLint to check for code issues
+- `yarn dev` - Start the development server
+- `yarn build` - Build the project for production
+- `yarn preview` - Preview the production build locally
+- `yarn lint` - Run ESLint to check for code issues
 
 ## 🎮 How to Use
 
@@ -98,19 +101,46 @@ MyRaffle/
 ├── src/
 │   ├── assets/
 │   │   └── react.svg
-│   ├── App.tsx          # Main application component
-│   ├── App.css          # Application styles
-│   ├── index.css        # Global styles and Tailwind imports
-│   ├── main.tsx         # React application entry point
-│   └── slot-machine.css # Slot machine specific animations
-├── index.html           # HTML template
-├── package.json         # Project dependencies and scripts
-├── tailwind.config.js   # Tailwind CSS configuration
-├── postcss.config.js    # PostCSS configuration
-├── tsconfig.json        # TypeScript configuration
-├── vite.config.ts       # Vite build tool configuration
-└── README.md           # Project documentation
+│   ├── components/           # Reusable React components
+│   │   └── SlotMachine.tsx   # Slot machine component with animation logic
+│   ├── model/                # TypeScript interfaces and types
+│   │   └── RaffleResult.ts   # RaffleResult interface definition
+│   ├── App.tsx               # Main application component and state management
+│   ├── index.css             # Global styles and Tailwind imports
+│   ├── main.tsx              # React application entry point
+│   └── slot-machine.css      # Slot machine specific animations
+├── index.html                # HTML template
+├── package.json              # Project dependencies and scripts
+├── tailwind.config.js        # Tailwind CSS configuration
+├── postcss.config.js         # PostCSS configuration
+├── tsconfig.json             # TypeScript configuration
+├── vite.config.ts            # Vite build tool configuration
+└── README.md                # Project documentation
 ```
+
+## 🏛️ Architecture
+
+The application follows a clean, modular architecture:
+
+### Components Layer (`/src/components/`)
+- **SlotMachine.tsx**: Encapsulates all slot machine functionality including animation logic, number sequence generation, and visual rendering
+- Reusable and self-contained components with clear props interfaces
+- Separation of concerns between UI and business logic
+
+### Model Layer (`/src/model/`)
+- **RaffleResult.ts**: Type definitions and interfaces for data structures
+- Centralized type definitions ensure type safety across the application
+- Easy to extend and maintain
+
+### Application Layer (`/src/`)
+- **App.tsx**: Main application state management, form validation, and orchestration
+- Clean separation between UI components and application logic
+- Centralized state management using React hooks
+
+### Styling
+- **index.css**: Global styles, Tailwind CSS imports, and custom CSS properties
+- **slot-machine.css**: Component-specific animations and styles that can't be handled by Tailwind
+- Modular CSS approach with clear separation of concerns
 
 ## ⚙️ Configuration
 
