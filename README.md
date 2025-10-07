@@ -97,10 +97,10 @@ A raffle application built with React, TypeScript, and Tailwind CSS. Features an
 ```
 MyRaffle/
 ├── public/
-│   └── vite.svg
+│   └── favicon.svg
 ├── src/
 │   ├── assets/
-│   │   └── react.svg
+│   │   └── logo.svg
 │   ├── components/           # Reusable React components
 │   │   └── SlotMachine.tsx   # Slot machine component with animation logic
 │   ├── model/                # TypeScript interfaces and types
