@@ -2,6 +2,12 @@
 
 A raffle application built with React, TypeScript, and Tailwind CSS. Features an animated slot machine interface that makes raffles engaging and fun!
 
+## 🌐 Live Demo
+
+**Try it now:** [https://myraffle-149da.web.app](https://myraffle-149da.web.app)
+
+Experience the full MyRaffle application with all its features - no installation required!
+
 ## ✨ Features
 
 - 🎰 **Animated Slot Machine**: Realistic spinning slot machine animation with synchronized number display
