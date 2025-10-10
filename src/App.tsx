@@ -12,6 +12,7 @@ function App() {
   const [isRunning, setIsRunning] = useState(false)
   const [error, setError] = useState('')
   const [winningNumber, setWinningNumber] = useState<number | null>(null)
+  const [raffleKey, setRaffleKey] = useState(0) // Add key to force SlotMachine regeneration
 
   const validateInputs = (): boolean => {
     setError('')
@@ -40,6 +41,7 @@ function App() {
     
     setIsRunning(true)
     setError('')
+    setRaffleKey(prev => prev + 1) // Force SlotMachine to regenerate
     
     // Calculate the winner immediately
     const max = parseInt(maxNumber)
@@ -64,6 +66,7 @@ function App() {
     setResult(null)
     setError('')
     setWinningNumber(null)
+    setRaffleKey(0) // Reset the key
   }
 
   return (
@@ -79,11 +82,12 @@ function App() {
       </header>
 
       <main className="w-full max-w-md">
-        {!result ? (
+        {!result || isRunning ? (
           <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-200">
             {isRunning ? (
               <SlotMachine 
-                maxNumber={parseInt(maxNumber)} 
+                key={raffleKey}
+                maxNumber={result ? result.maxNumber : parseInt(maxNumber)} 
                 winningNumber={winningNumber!} 
                 isComplete={false}
               />
@@ -140,13 +144,37 @@ function App() {
         ) : (
           <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-200">
             <SlotMachine
+              key={raffleKey}
               maxNumber={result.maxNumber} 
               winningNumber={result.winner} 
               isComplete={true}
               title={result.title}
               timestamp={result.timestamp}
             />
-            <div className="flex justify-center mt-6">
+            <div className="flex justify-center gap-4 mt-6">
+              <button 
+                onClick={() => {
+                  setIsRunning(true)
+                  setWinningNumber(null)
+                  setRaffleKey(prev => prev + 1) // Force SlotMachine to regenerate
+                  
+                  // Calculate new winner with same settings
+                  const winner = Math.floor(Math.random() * result.maxNumber) + 1
+                  setWinningNumber(winner)
+                  
+                  setTimeout(() => {
+                    setResult({
+                      ...result,
+                      winner,
+                      timestamp: new Date()
+                    })
+                    setIsRunning(false)
+                  }, 3000)
+                }} 
+                className="bg-gradient-to-r from-orange-500 to-sky-500 text-white border-none p-3 px-6 text-base font-semibold rounded-lg cursor-pointer transition-all hover:transform hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                🎲 Re-run Raffle
+              </button>
               <button 
                 onClick={resetRaffle} 
                 className="bg-gray-600 text-white border-none p-3 px-6 text-base font-semibold rounded-lg cursor-pointer transition-all hover:bg-gray-700 hover:transform hover:-translate-y-0.5"
