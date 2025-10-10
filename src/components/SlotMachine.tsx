@@ -36,7 +36,7 @@ export const SlotMachine = ({
       {isComplete && title && (
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold mb-2 text-gray-800">🎉 Raffle Complete!</h2>
-          <h3 className="text-2xl font-semibold text-indigo-600">{title}</h3>
+          <h3 className="text-2xl font-semibold text-orange-500">{title}</h3>
         </div>
       )}
       
@@ -55,10 +55,10 @@ export const SlotMachine = ({
           </div>
         </div>
         <div className="absolute inset-5 pointer-events-none">
-          <div className="absolute top-2.5 left-2.5 w-3 h-3 rounded-full bg-yellow-400 animate-blink shadow-lg light-delay-0"></div>
-          <div className="absolute top-2.5 right-2.5 w-3 h-3 rounded-full bg-yellow-400 animate-blink shadow-lg light-delay-200"></div>
-          <div className="absolute bottom-2.5 left-2.5 w-3 h-3 rounded-full bg-yellow-400 animate-blink shadow-lg light-delay-400"></div>
-          <div className="absolute bottom-2.5 right-2.5 w-3 h-3 rounded-full bg-yellow-400 animate-blink shadow-lg light-delay-600"></div>
+          <div className="absolute top-2.5 left-2.5 w-3 h-3 rounded-full bg-orange-400 animate-blink shadow-lg light-delay-0"></div>
+          <div className="absolute top-2.5 right-2.5 w-3 h-3 rounded-full bg-orange-400 animate-blink shadow-lg light-delay-200"></div>
+          <div className="absolute bottom-2.5 left-2.5 w-3 h-3 rounded-full bg-orange-400 animate-blink shadow-lg light-delay-400"></div>
+          <div className="absolute bottom-2.5 right-2.5 w-3 h-3 rounded-full bg-orange-400 animate-blink shadow-lg light-delay-600"></div>
         </div>
       </div>
       
@@ -71,7 +71,7 @@ export const SlotMachine = ({
           )}
         </div>
       ) : (
-        <p className="text-xl font-semibold text-indigo-600 m-0 animate-pulse-custom">🎰 Rolling the numbers...</p>
+        <p className="text-xl font-semibold text-sky-500 m-0 animate-pulse-custom">🎰 Rolling the numbers...</p>
       )}
     </div>
   )

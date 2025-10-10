@@ -71,7 +71,7 @@ function App() {
       <header className="text-center">
         <div className="flex items-center justify-center gap-4 mb-4">
           <img src={logo} alt="MyRaffle Logo" className="w-16 h-16" />
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-500 to-sky-500 bg-clip-text text-transparent">
             MyRaffle
           </h1>
         </div>
@@ -100,7 +100,7 @@ function App() {
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="Enter raffle title (e.g., 'Weekly Prize Draw')"
                     disabled={isRunning}
-                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-base transition-colors focus:outline-none focus:border-indigo-600 focus:ring-0 focus:ring-indigo-100 disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed"
+                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-base transition-colors focus:outline-none focus:border-orange-500 focus:ring-0 focus:ring-orange-100 disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed"
                   />
                 </div>
 
@@ -117,7 +117,7 @@ function App() {
                     min="1"
                     max="10000"
                     disabled={isRunning}
-                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-base transition-colors focus:outline-none focus:border-indigo-600 focus:ring-0 focus:ring-indigo-100 disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed"
+                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-base transition-colors focus:outline-none focus:border-orange-500 focus:ring-0 focus:ring-orange-100 disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed"
                   />
                 </div>
 
@@ -130,7 +130,7 @@ function App() {
                 <button 
                   onClick={runRaffle} 
                   disabled={isRunning}
-                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white border-none p-4 text-lg font-semibold rounded-lg cursor-pointer transition-transform hover:transform hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none mt-4"
+                  className="w-full bg-gradient-to-r from-orange-500 to-sky-500 text-white border-none p-4 text-lg font-semibold rounded-lg cursor-pointer transition-transform hover:transform hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none mt-4"
                 >
                   🎲 Run Raffle
                 </button>
