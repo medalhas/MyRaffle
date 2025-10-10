@@ -26,11 +26,11 @@ export default {
         blink: {
           '0%': { 
             opacity: '0.3',
-            boxShadow: '0 0 5px #ffd700'
+            boxShadow: '0 0 5px #f97316'
           },
           '100%': { 
             opacity: '1',
-            boxShadow: '0 0 20px #ffd700, 0 0 30px #ffd700'
+            boxShadow: '0 0 20px #f97316, 0 0 30px #ea580c'
           },
         },
       },
